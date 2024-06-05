@@ -9,7 +9,7 @@ class Profile(models.Model):
     image=models.ImageField(upload_to='photo_user')
     code=models.CharField(max_length=25,default=generate_code)
 
-    def __str(self):
+    def __str__(self):
         return str(self.user)
     
 

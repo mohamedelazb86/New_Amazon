@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     # MY PACAKGE
      "django_bootstrap5",
      "taggit",
+     'django_summernote',
 
     # my apps
 

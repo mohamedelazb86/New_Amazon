@@ -1,18 +1,46 @@
 from django.shortcuts import render,redirect
-from .models import Post
-from .forms import PostForm
+from .models import Post,Comment
+from .forms import PostForm,CommentForm
 
 def post_list(request):
     posts=Post.objects.all()
+    if request.method=='POST':
+        form=PostForm(request.POST,request.FILES)
+        if form.is_valid():
+            myform=form.save(commit=False)
+            myform.user=request.user
+            myform.save()
+            return redirect('/posts/')
+    else:
+        form=PostForm()
     context={
-        'posts':posts
+        'posts':posts,
+        'form':form,
     }
     return render(request,'posts/post_list.html',context)
 
 def post_detail(request,slug):
     post=Post.objects.get(slug=slug)
+
+    comment=Comment.objects.filter(post=post)
+    if request.method=='POST':
+        form=CommentForm(request.POST)
+        if form.is_valid():
+            myform=form.save(commit=False)
+            myform.user=request.user
+            myform.post=post
+            myform.save()
+            return redirect(f'/posts/{post.slug}')
+    else:
+        form=CommentForm()
+
+   
+    
     context={
-        'post':post
+        'post':post,
+        'comments':comment,
+        'form':form,
+        
     }
     return render(request,'posts/post_detail.html',context)
 

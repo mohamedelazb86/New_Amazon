@@ -12,6 +12,17 @@
     <h3>{{post.category}}</h3>
     <h3>{{post.draft}}</h3>
     <img src="{{post.image.url}}" alt="">
+
+    <h1>ALL COMMENTS ({{comments|length}})</h1>
+    {% for item in comments %}
+    <h3>{{item.user}}------{{item.content}}</h3>
+    <h3>{{item.user}}------{{item.rate}}</h3>
+    {% endfor %}
+    <form action="" method="post">
+      {% csrf_token %}
+      {{form}}
+      <input type="submit" value="add comment">
+    </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>

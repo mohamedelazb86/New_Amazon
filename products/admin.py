@@ -7,7 +7,7 @@ class ProductImage(admin.TabularInline):
     model=Imgae_Product
 
 class ProductAdmin(SummernoteModelAdmin):
-    list_display=['name','flag','sku','subtitle']
+    list_display=['name','flag','sku']
     list_filter=['brand','flag']
     search_fields=['name','subtitle','descriptions']
     summernote_fields = ('subtitle','descriptions')

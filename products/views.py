@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from django.views.generic import ListView,DetailView
 from .models import Product,Brand,Review,Imgae_Product
+from django.db.models.aggregates import Count
 
 
 class Product_list(ListView):
@@ -23,10 +24,15 @@ class Product_Detail(DetailView):
 class Brand_list(ListView):
     model=Brand
     template_name='products/brand_list.html'
+    paginate_by=20
+    
+    queryset=Brand.objects.annotate(product_count=Count('product_brand'))
+    
 
 class Brand_detail(DetailView):
     model=Brand
     template_name='products/brand_detail.html'
+    
     
 def add_review(request,slug):
     product=Product.objects.get(slug=slug)

@@ -14,10 +14,19 @@ class Product_Detail(DetailView):
 
     def get_context_data(self, **kwargs) :
         context = super().get_context_data(**kwargs)
-        context["reviews"] = Review.objects.filter(product=self.get_object())
+        context["reviews"] = Review.objects.filter(product=self.get_object()).order_by('-id')[:3]
         context["images"] = Imgae_Product.objects.filter(product=self.get_object())
         context["products"] =Product.objects.filter(brand=self.get_object().brand)
         return context
+
+
+class Brand_list(ListView):
+    model=Brand
+    template_name='products/brand_list.html'
+
+class Brand_detail(DetailView):
+    model=Brand
+    template_name='products/brand_detail.html'
     
 def add_review(request,slug):
     product=Product.objects.get(slug=slug)

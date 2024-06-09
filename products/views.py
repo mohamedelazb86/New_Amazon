@@ -6,8 +6,9 @@ from .models import Product,Brand
 class Product_list(ListView):
     model=Product
     template_name='products/product_list.html'
+    paginate_by=20
 
 class Product_Detail(DetailView):
     model=Product
     template_name='products/product_detail.html'
-    
+

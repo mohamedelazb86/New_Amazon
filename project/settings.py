@@ -49,6 +49,7 @@ INSTALLED_APPS = [
 
     'posts',
     'products',
+    'settings',
 
 
 
@@ -79,6 +80,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'settings.context_data.get_context_data'
             ],
         },
     },

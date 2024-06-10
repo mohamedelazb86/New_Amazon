@@ -45,6 +45,8 @@ INSTALLED_APPS = [
      "taggit",
      'django_summernote',
       'rest_framework',
+      'django_filters',
+      'drf_yasg',
 
     # my apps
 
@@ -79,7 +81,8 @@ REST_FRAMEWORK = {
     # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
+    ],
+     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
 }
 
 TEMPLATES = [

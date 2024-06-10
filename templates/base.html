@@ -104,12 +104,12 @@
                 <div class="header-content">
                     <div class="header-media-group">
                         <button class="header-user"><img src="images/user.png" alt="user"></button>
-                        <a href="index.html"><img src="{{context_data.logo.url}}" alt="logo"></a>
+                        <a href="index.html"><img src="" alt="logo"></a>
                         <button class="header-src"><i class="fas fa-search"></i></button>
                     </div>
 
                     <a href="index.html" class="header-logo">
-                        <img src="images/logo.png" alt="logo">
+                        <img src="{{context_data.logo.url}}" alt="logo">
                     </a>
                     <a href="login.html" class="header-widget" title="My Account">
                         <img src="images/user.png" alt="user">
@@ -871,9 +871,9 @@
                     <div class="col-sm-6 col-xl-3">
                         <div class="footer-widget">
                             <a class="footer-logo" href="#">
-                                <img src="images/logo.png" alt="logo">
+                                <img src="{{context_data.logo.url}}" alt="logo">
                             </a>
-                            <p class="footer-desc">Adipisci asperiores ipsum ipsa repellat consequatur repudiandae quisquam assumenda dolor perspiciatis sit ipsum dolor amet.</p>
+                            <p class="footer-desc">{{context_data.subtitle}}</p>
                             <ul class="footer-social">
                                 <li><a class="icofont-facebook" href="#"></a></li>
                                 <li><a class="icofont-twitter" href="#"></a></li>
@@ -890,20 +890,20 @@
                                 <li>
                                     <i class="icofont-ui-email"></i>
                                     <p>
-                                        <span>support@greeny.com</span>
-                                        <span>carrer@greeny.com</span>
+                                        <span>{{context_data.email_us}}</span>
+                                        
                                     </p>
                                 </li>
                                 <li>
                                     <i class="icofont-ui-touch-phone"></i>
                                     <p>
-                                        <span>+120 279 532 13</span>
-                                        <span>+120 279 532 14</span>
+                                        <span>{{context_data.call_us}}</span>
+                                        
                                     </p>
                                 </li>
                                 <li>
                                     <i class="icofont-location-pin"></i>
-                                    <p>1Hd- 50, 010 Avenue, NY 90001 United States</p>
+                                    <p>{{context_data.address}}</p>
                                 </li>
                             </ul>
                         </div>

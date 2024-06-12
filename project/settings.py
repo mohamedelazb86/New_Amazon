@@ -157,7 +157,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ar'
 
 TIME_ZONE = 'UTC'
 
@@ -198,4 +198,4 @@ EMAIL_HOST_USER = 'mohamedelazab2017@gmail.com'
 EMAIL_HOST_PASSWORD = 'mazrfqbmquqwuapv'
 
 EMAIL_USE_SSL = False
-
+LOCALE_PATHS=['locale']
